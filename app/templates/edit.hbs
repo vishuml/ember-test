@@ -1,0 +1,8 @@
+<Header>
+  <h1>
+    <img src={{@model.image}}/>
+    <span>Edit {{@model.fullName}}</span>
+  </h1>
+</Header>
+<LinkTo @route='home' class='button link'>Back to developers</LinkTo>
+<Form @editEmployee={{@model}}/>

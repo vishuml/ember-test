@@ -1,0 +1,54 @@
+<form class="form" {{on "submit" save}}>
+  {{#if errorMessage.length}}
+    <p class="form-error-message">{{errorMessage}}</p>
+  {{/if}}
+  <div class="form-field">
+    <label class="form-label" for="firstName">
+      First Name
+      <Input class="input"
+             type="text"
+             id="firstName"
+             placeholder="First name"
+             required
+             @value={{firstName}} />
+    </label>
+  </div>
+  <div class="form-field">
+    <label class="form-label" for="lastName">
+      Last Name
+      <Input class="input"
+             type="text"
+             id="lastName"
+             placeholder="Last name"
+             required
+             @value={{lastName}} />
+    </label>
+  </div>
+  <div class="form-field">
+    <label class="form-label" for="role">
+      Role
+      <PowerSelect @selected={{role}}
+                   @options={{staffData.roleNames}}
+                   @placeholder="Select role"
+                   @onChange={{fn changeRole}} as |value|>
+        {{value}}
+      </PowerSelect>
+    </label>
+  </div>
+  <div class="form-field">
+    <label class="form-label" for="frameworks">
+      Framework
+      <PowerSelectMultiple @searchEnabled={{true}}
+                           @options={{frameworkNames}}
+                           @selected={{frameworks}}
+                           @placeholder="Select frameworks"
+                           @onChange={{fn (mut frameworks)}} as |value|>
+        {{value}}
+      </PowerSelectMultiple>
+    </label>
+  </div>
+  <button class="button success" {{on "click" save}}>{{buttonText}}</button>
+  {{#if editEmployee}}
+    <button class="button danger form-fire-button" {{on "click" fire}}>Fire</button>
+  {{/if}}
+</form>

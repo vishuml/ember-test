@@ -1,0 +1,58 @@
+<div class='filters'>
+  <div class="filter">
+    <PowerSelectMultiple
+            @placeholder="Filter by role"
+            @options={{staffData.roleNames}}
+            @selected={{filterRoles}}
+            @onChange={{fn changeFilterRole}} as |role|>
+      {{role}}
+    </PowerSelectMultiple>
+  </div>
+  <div class="filter">
+    <PowerSelectMultiple
+            @placeholder="Filter by framework"
+            @options={{frameworks}}
+            @selected={{filterFrameworks}}
+            @onChange={{fn changeFilterFrameworks}} as |framework|>
+      {{framework}}
+    </PowerSelectMultiple>
+  </div>
+</div>
+
+<div class='list'>
+  <div class='row'>
+    <div class="cell"></div>
+    <div class="cell">First name</div>
+    <div class="cell">Last name</div>
+    <div class="cell">Role</div>
+    <div class="cell">Frameworks</div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+
+  {{#if staff.length}}
+    {{#each staff as |employee|}}
+      <div class='row'>
+        <div class="cell"><img src={{employee.image}}/></div>
+        <div class="cell">{{employee.firstName}}</div>
+        <div class="cell">{{employee.lastName}}</div>
+        <div class="cell">{{employee.role}}</div>
+        <div class="cell">
+          {{#each employee.frameworks as |framework|}}
+            {{framework}}
+          {{/each}}</div>
+        <div class="cell">
+          <LinkTo @route='edit' class='button light' @model={{employee.id}}>Edit</LinkTo>
+        </div>
+        <div class="cell">
+          <div class='button danger' {{on "click" (fn fire employee)}}>Fire</div>
+        </div>
+      </div>
+    {{/each}}
+
+  {{else}}
+    <div class="empty">
+      The list is empty
+    </div>
+  {{/if}}
+</div>

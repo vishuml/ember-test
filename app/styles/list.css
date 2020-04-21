@@ -1,0 +1,61 @@
+.list {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 15px 30px;
+}
+
+.row:first-child {
+  color: gray;
+}
+
+.row:not(:first-child) {
+  background-color: #ffffff;
+}
+
+.cell {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.cell img {
+  width: 50px;
+}
+
+.filters {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.filter {
+  width: 200px;
+}
+
+.filter:first-child {
+  margin-right: 10px;
+}
+
+.filter > div {
+  outline: none;
+}
+
+.empty {
+  text-align: center;
+  border: 1px solid silver;
+  border-radius: 3px;
+  padding: 10px;
+  background: rgba(0,0,0,.03);
+  color: gray;
+}

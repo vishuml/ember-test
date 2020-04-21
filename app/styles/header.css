@@ -1,0 +1,17 @@
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px 20px 10px;
+}
+.header-wrapper h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: gray;
+  text-transform: capitalize;
+}
+.header-wrapper h1 img {
+  height: 25px;
+  display: inline-block;
+}

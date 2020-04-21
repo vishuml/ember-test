@@ -1,0 +1,43 @@
+.form {
+  padding: 10px 20px;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  color: gray;
+  font-weight: bold;
+}
+
+.form-label input,
+.form-label select {
+  width: 100%;
+  border-radius: 3px;
+  padding: 3px 10px;
+}
+
+.form-label > input,
+.form-label > select {
+  border: 1px solid silver;
+}
+
+.form-label > div {
+  font-weight: normal;
+}
+
+.form-error-message {
+  border: 1px solid indianred;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  background-color: rgba(205, 92, 92, .3) ;
+  color: indianred;
+}
+
+.form-fire-button {
+  float: right;
+}
+
+

@@ -1,0 +1,52 @@
+.button {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px 20px;
+  transition: all .2s linear;
+  cursor: pointer;
+  background-color: white;
+  text-decoration: none;
+  outline: none;
+  width: fit-content;
+}
+
+.button.success {
+  border-color: limegreen;
+  color: limegreen;
+}
+
+.button.success:hover {
+  background-color: limegreen;
+  color: white;
+}
+
+.button.danger {
+  border-color: tomato;
+  color: tomato;
+}
+
+.button.danger:hover {
+  background-color: tomato;
+  color: white;
+}
+
+.button.light {
+  border: none;
+  color: silver;
+  font-weight: bold;
+}
+
+.button.light:hover {
+  color: gray;
+}
+
+.button.link {
+  border: none;
+  color: silver;
+  text-decoration: underline;
+  background: transparent;
+}
+
+.button.link:hover {
+  color: gray;
+}
